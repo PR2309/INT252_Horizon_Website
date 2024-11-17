@@ -17,3 +17,12 @@ main{
   overflow-x: hidden;
 
 }
+input, textarea {
+  background-color: rgba(244, 244, 244, 0.5)!important;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+img{
+  pointer-events: none;
+}

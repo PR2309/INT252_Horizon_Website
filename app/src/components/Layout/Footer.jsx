@@ -62,7 +62,6 @@ const Footer = () => {
 						background-image: linear-gradient(to bottom,transparent, #3c4d5c);
 						height:5vh;
 						overflow: hidden;
-
 					}
                     .line-gap {
                         background: linear-gradient(to top, #000000, rgba(25, 25, 26, 0));/*
@@ -86,18 +85,18 @@ const Footer = () => {
 						border-radius: 50%;
 						transition: background 0.3s ease, border 0.3s ease,
 							box-shadow 0.3s ease;
-						padding: 8px 9.5px 5px 9.5px;
+						padding: 8px 9px 7px 9px;
 					}
                     .social-icon>i{
                         background-color:transparent;
                     }
 					/* Gradient backgrounds on hover for each platform */
-					.social-icon.facebook{padding:9px 12.5px 6px 12.5px;}
+					.social-icon.facebook{padding:9px 12px 6px 12px;}
 					.social-icon.facebook:hover {
 						background: linear-gradient(45deg, #3b5998, #4a69ad, #8b9dc3, #3b5998);
 					}
                     .social-icon.call:hover {
-                        background: linear-gradient(45deg, #1e3a8a, #2563eb, #1d4ed8); /* Dark bluish gradient */
+                        background: linear-gradient(45deg, #1e3a8a, #2563eb, #1d4ed8);
                     }
                     .social-icon.whatsapp:hover {
                         background: linear-gradient(45deg, #25d366, #128c7e, #075e54);

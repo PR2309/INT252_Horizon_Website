@@ -1,5 +1,13 @@
 import React, {useState} from "react";
 import Layout from "../../components/Layout/Layout";
+import {toast} from 'react-toastify';
+import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
+import dotenv from 'dotenv';
+
+// configure environment variables
+dotenv.config("../../../"); // relative path of .env file
+
 const Register = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -7,12 +15,26 @@ const Register = () => {
     const [confrim_password, setCPassword] = useState("");
     const [phone, setPhone] = useState("");
     const [address, setAddress] = useState("");
-
+    const navigate=useNavigate();
     // submit function
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(name,email,phone,address);
-    }
+        try{
+            const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/register`,{name, email, password, confrim_password, phone, address});   // connection and parameters passing to server
+            // const res = await axios.post("/api/v1/auth/register",{name, email, password, confrim_password, phone, address});   // connection and parameters passing to server
+            if(res.data.success){
+                toast.success(res.data.message); // success message toasted from server   
+                navigate('/login');
+            }else{
+                toast.error(res.data.message);  // error message toasted from server
+            }
+            console.log(name,email,phone,address);
+        }catch(error){
+            console.log(error);
+            toast.error("Something went wrong");
+        }
+    };
+    console.log(process.env.REACT_APP_API);
 	return (
 		<>
 			<Layout title={"Register - Horizon InfoTech"}>

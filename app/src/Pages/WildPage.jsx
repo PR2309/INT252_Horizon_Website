@@ -6,8 +6,8 @@ const WildPage = () => {
 	return (
 		<>
 			<Layout title={"Unknown - Horizon InfoTech"}>
-				<div className="pnf">
-					<img src="pnf.png" alt="" height={"300vh"}/>
+				<div className="pnf p-5">
+					<img src="pnf.png" alt="" height={"300vh"} className="pnf-img"/>
 					<h1 className="pnf-title">Error : 404</h1>
 					<br />
 					<h2 className="pnf-heading">Oops! Page Not Found</h2>
@@ -31,7 +31,10 @@ const WildPage = () => {
 				.pnf-heading {
 					font-weight: normal;
 				}
-				
+				.pnf-img{
+					user-drag: none;
+					pointer-events: none;
+				}
 			`}</style>
 		</>
 	);
