@@ -6,5 +6,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background: #000; */
+}
+body{
+  background-image:radial-gradient(circle, #0c0f16, #1a1f2b, #2a3644, #3c4d5c, #506873)!important;
+}
+
+main{
+  color: aliceblue;
 }

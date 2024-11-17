@@ -8,7 +8,7 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 
 // configure environment variables
-dotenv.config(".");
+dotenv.config(""); // relative path of .env file
 
 // configure database
 connectDB();

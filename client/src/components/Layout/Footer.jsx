@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // import './Footer.css'; // Import the CSS file for custom styles
 
 const Footer = () => {
 	return (
 		<>
+			<div className="joint-container"></div>
 			<footer className="bg-body-tertiary text-center">
 				<div className="container p-4 pb-0">
 					<section className="mb-4">
@@ -33,26 +35,45 @@ const Footer = () => {
 						</a>
 					</section>
 				</div>
-				<div className="copyright text-center p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.05)", color: "lightgrey" }}>
-					All rights Reserved &copy; 2020 Copyright:
-					<a className="text-body" href="#">
+				<div className="line-gap text-center p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.05)", color: "lightgrey" }}></div>
+                <div className="copyright text-light bg-dark">
+                    <p>Welcome to Horizon InfoTech</p>
+                    <hr />
+                    All rights Reserved &copy; 2020 Copyright:
+					<a className="text-body" href="/">
 						<span style={{color:"lightgrey"}}>Piyush Anand</span>
 					</a>
-				</div>
-                <div className="details text-light bg-dark">
-                    <p></p>
-                    <hr />
-                    <p></p>
-
+					<p className="details text-center mt-3">
+						<Link to="/about" className="footer-links"><nobr>About Us</nobr></Link>&nbsp;|&nbsp; 
+						<Link to="/contact" className="footer-links"><nobr>Contact Us</nobr></Link>&nbsp;|&nbsp; 
+						<Link to="/policy" className="footer-links">Policies</Link>&nbsp;|&nbsp;
+						<Link to="services" className="footer-links">Services</Link> 
+					</p>
                 </div>
 
 			</footer>
-			<style jsx>
+			<style jsx="">
 				{`
-                    .copyright {
-                        background: linear-gradient(to top, #19191a, rgba(25, 25, 26, 0));
-                        height: 40px;
+					footer{
+						background-image: linear-gradient(to bottom, #3c4d5c, #506873);
+					}
+					.joint-container{
+						padding:25px;
+						background-image: linear-gradient(to bottom,transparent, #3c4d5c);
+						height:5vh;
+						overflow: hidden;
+
+					}
+                    .line-gap {
+                        background: linear-gradient(to top, #000000, rgba(25, 25, 26, 0));/*
+                        background: linear-gradient(to top, #19191a, rgba(25, 25, 26, 0));*/
                     }
+					.copyright>p{margin:0;}
+					.copyright{
+						background-color:#000 !important;
+						positon: relative !important;
+						margin: 0;
+					}
 					.footer {
 						bottom: 0;
 						width: 100vw;
@@ -107,6 +128,20 @@ const Footer = () => {
                             inset 0 0 3px 1px rgba(169, 169, 169, 0.9); /* Inner solid grey */
                         background-color: rgba(0, 0, 0, 0.5) !important; /* Ensure the background remains translucent */    
                     }
+					.details{
+						color:white;
+						padding: 25px;
+						gap:0.5rem!important;
+					}
+					.footer-links{
+						text-decoration:none;
+						color:inherit;
+					}
+					.footer-links:hover{
+						color:#ffefba;
+						font-style: italic;
+						border-bottom:1px solid #ffefba;
+					}
 				`}
 			</style>
 		</>
